@@ -4,11 +4,15 @@ import { TOKEN_POST, USER_GET } from "../../api.js";
 
 import { Button } from "../../components/forms/button";
 import { Input } from "../../components/forms/input";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+
+import { UserContext } from "../../user-context";
 
 export function LoginForm() {
   const username = useForm();
   const password = useForm();
+
+  const { userLogin } = useContext(UserContext);
 
   useEffect(() => {
     const token = window.localStorage.getItem("token");
@@ -29,15 +33,7 @@ export function LoginForm() {
     event.preventDefault();
 
     if (username.validate() && password.validate()) {
-      const { url, options } = TOKEN_POST({
-        username: username.value,
-        password: password.value,
-      });
-
-      const response = await fetch(url, options);
-      const json = await response.json();
-      window.localStorage.setItem("token", json.token);
-      getUser(json.token);
+      userLogin(username.value, password.value);
     }
   }
 
