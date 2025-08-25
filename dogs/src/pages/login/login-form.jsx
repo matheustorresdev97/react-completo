@@ -12,7 +12,7 @@ export function LoginForm() {
   const username = useForm();
   const password = useForm();
 
-  const { userLogin } = useContext(UserContext);
+  const { userLogin, error, loading } = useContext(UserContext);
 
   useEffect(() => {
     const token = window.localStorage.getItem("token");
@@ -43,6 +43,13 @@ export function LoginForm() {
       <form onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="Senha" type="password" name="password" {...password} />
+        {loading ? (
+          <Button disabled>Carregando...</Button>
+        ) : (
+          <Button>Entrar</Button>
+        )}
+
+        {error && <p>{error}</p>}
 
         <Button>Entrar</Button>
       </form>
