@@ -8,7 +8,7 @@ const types = {
   },
 };
 
-const useForm = (type) => {
+export function useForm(type) {
   const [value, setValue] = useState("");
   const [error, setError] = useState(null);
 
@@ -41,4 +41,4 @@ const useForm = (type) => {
   };
 };
 
-export default useForm;
+
