@@ -19,6 +19,7 @@ export default function App() {
         <UserStorage>
           <Header />
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />}>
               <Route index element={<LoginForm />} />
               <Route path="criar" element={<LoginCreate />} />
