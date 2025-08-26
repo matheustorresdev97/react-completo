@@ -19,7 +19,7 @@ export default function User() {
 
       <UserHeader />
       <Routes>
-        <Route path="/" element={<Feed user={data.id} />} />
+        <Route path="/" element={<Feed user={data} />} />
         <Route path="postar" element={<UserPhotoPost />} />
         <Route path="estatisticas" element={<UserStats />} />
         <Route path="*" element={<NotFound />} />

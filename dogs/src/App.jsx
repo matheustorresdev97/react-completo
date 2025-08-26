@@ -26,9 +26,9 @@ export default function App() {
               <Route
                 path="conta/*"
                 element={
-                  <ProtectedRoute>
+              
                     <User />
-                  </ProtectedRoute>
+            
                 }
               />
               <Route path="foto/:id" element={<Photo />} />

@@ -1,13 +1,13 @@
 import styles from "./user-header.module.css";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import UserHeaderNav from "../user-header-nav/user-header-nav";
 
 export function UserHeader() {
   const [title, setTitle] = useState("");
   const location = useLocation();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const { pathname } = location;
 
     switch (pathname) {

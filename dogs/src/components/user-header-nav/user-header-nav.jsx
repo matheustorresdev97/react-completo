@@ -6,6 +6,7 @@ import AdicionarFoto from "../../assets/adicionar.svg?react";
 import Sair from "../../assets/sair.svg?react";
 import styles from "./user-header-nav.module.css";
 import { useContext, useEffect, useState } from "react";
+import { useMedia} from "../../hooks/useMedia";
 
 const UserHeaderNav = () => {
   const { userLogout } = useContext(UserContext);

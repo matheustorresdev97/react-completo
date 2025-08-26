@@ -1,4 +1,4 @@
-import Head from "../Helper/Head";
+import { Head } from "../../components/helper/head";
 import { useFetch } from "../../hooks/useFetch";
 import { STATS_GET } from "../../api";
 import { Loading } from "../../components/helper/loading";
