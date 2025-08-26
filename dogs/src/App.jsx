@@ -10,14 +10,9 @@ import { LoginCreate } from "./pages/login/login-create";
 import { LoginPasswordLost } from "./pages/login/login-password-lost";
 import { LoginPasswordReset } from "./pages/login/login-password-reset";
 
-import { UserContext, UserStorage } from "./user-context";
-import { useContext } from "react";
+import { UserStorage } from "./user-context";
 
 export default function App() {
-  const { login } = useContext(UserContext);
-
-  if (login === true) return <Navigate to="/conta" />;
-
   return (
     <div>
       <BrowserRouter>
