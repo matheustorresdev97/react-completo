@@ -8,14 +8,15 @@ import Feed from "./feed";
 import UserPhotoPost from "./user-photo-post";
 import UserStats from "./user-stats";
 import NotFound from "../not-found";
-
-
+import { Head } from "../../components/helper/head";
 
 export default function User() {
   const { data } = useContext(UserContext);
 
   return (
     <section className="container">
+      <Head title="Minha conta" />
+
       <UserHeader />
       <Routes>
         <Route path="/" element={<Feed user={data.id} />} />

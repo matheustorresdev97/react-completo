@@ -10,6 +10,8 @@ import { useContext, useEffect } from "react";
 import { UserContext } from "../../user-context";
 import { Error } from "../../components/helper/error";
 
+import { Head } from "../../components/helper/head";
+
 export default function LoginForm() {
   const username = useForm();
   const password = useForm();
@@ -41,6 +43,7 @@ export default function LoginForm() {
 
   return (
     <section className="animeLeft">
+           <Head title="Login" />
       <h1 className="title">Login</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...username} />

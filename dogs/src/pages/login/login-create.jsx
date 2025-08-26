@@ -9,6 +9,8 @@ import { Error } from "../../components/helper/error";
 
 import { useFetch } from "../../hooks/useFetch";
 
+import { Head } from "../../components/helper/head";
+
 export default function LoginCreate() {
   const username = useForm();
   const email = useForm("email");
@@ -30,6 +32,8 @@ export default function LoginCreate() {
 
   return (
     <section className="animeLeft">
+      <Head title="Criar conta" />
+
       <h1 className="title">Cadastre-se</h1>
 
       <form onSubmit={handleSubmit}>
