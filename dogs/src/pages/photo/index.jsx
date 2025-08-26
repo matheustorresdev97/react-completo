@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import { PHOTO_GET } from "../../api";
-import useFetch from "../../hooks/useFetch";
-import Error from "../../components/helper/error";
-import Loading from "../../components/helper/loading";
-import PhotoContent from "../../components/photo-content";
+import {useFetch} from "../../hooks/useFetch";
+import { Error } from "../../components/helper/error";
+import { Loading } from "../../components/helper/loading";
+import { PhotoContent } from "../../components/photo-content";
 
 export default function Photo() {
   const { id } = useParams();
