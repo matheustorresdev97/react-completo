@@ -1,4 +1,4 @@
-export function UserStats() {
+export default function UserStats() {
   return <div>Estatisticas</div>;
 }
     

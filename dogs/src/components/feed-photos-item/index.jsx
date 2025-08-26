@@ -1,7 +1,5 @@
 import styles from "./feed-photos-item.module.css";
-import Image from '../helper/image';
-
-
+import { Image } from "../helper/image";
 
 export function FeedPhotosItem({ photo, setModalPhoto }) {
   function handleClick() {

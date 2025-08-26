@@ -10,7 +10,7 @@ import { useContext, useEffect } from "react";
 import { UserContext } from "../../user-context";
 import { Error } from "../../components/helper/error";
 
-export function LoginForm() {
+export default function LoginForm() {
   const username = useForm();
   const password = useForm();
 

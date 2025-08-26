@@ -1,6 +1,6 @@
-import { Feed } from "../user/feed";
+import Feed from "../user/feed";
 
-export function Home() {
+export default function Home() {
   return (
     <section className="container mainContainer">
       <Feed />

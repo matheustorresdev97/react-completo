@@ -1,23 +1,17 @@
 import "./App.css";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
-
-import { Home } from "./pages/home";
-import { Login } from "./pages/login";
-import { LoginForm } from "./pages/login/login-form";
-import { LoginCreate } from "./pages/login/login-create";
-import { LoginPasswordLost } from "./pages/login/login-password-lost";
-import { LoginPasswordReset } from "./pages/login/login-password-reset";
-
-import { User } from "./pages/user";
 import { ProtectedRoute } from "./components/helper/protected-route";
 
-import { Feed } from "./pages/user/feed";
-import { UserPhotoPost } from "./pages/user/user-photo-post";
-import { UserStats } from "./pages/user/user-stats";
-
 import { UserStorage } from "./user-context";
+
+import Home from "./pages/home";
+import Login from "./pages/login";
+import User from "./pages/user";
+import Photo from "./pages/photo";
+import UserProfile from "./pages/user/user-profile";
+import NotFound from "./pages/not-found";
 
 export default function App() {
   return (
@@ -27,24 +21,18 @@ export default function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />}>
-              <Route index element={<LoginForm />} />
-              <Route path="criar" element={<LoginCreate />} />
-              <Route path="perdeu" element={<LoginPasswordLost />} />
-              <Route path="resetar" element={<LoginPasswordReset />} />
-            </Route>
+            <Route path="login/*" element={<Login />} />
             <Route
-              path="conta/"
+              path="conta/*"
               element={
                 <ProtectedRoute>
                   <User />
                 </ProtectedRoute>
               }
-            >
-              <Route index element={<Feed />} />
-              <Route path="postar" element={<UserPhotoPost />} />
-              <Route path="estatisticas" element={<UserStats />} />
-            </Route>
+            />
+            <Route path="foto/:id" element={<Photo />} />
+            <Route path="perfil/:user" element={<UserProfile />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </UserStorage>

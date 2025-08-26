@@ -9,7 +9,7 @@ import { Error } from "../../components/helper/error";
 
 import { useFetch } from "../../hooks/useFetch";
 
-export function LoginCreate() {
+export default function LoginCreate() {
   const username = useForm();
   const email = useForm("email");
   const password = useForm();

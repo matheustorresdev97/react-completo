@@ -1,3 +1,3 @@
-export function LoginPasswordLost() {
+export default function LoginPasswordLost() {
   return <div></div>;
 }

@@ -9,7 +9,7 @@ import { Error } from "../../components/helper/error";
 import { PHOTO_POST } from "../../api";
 import { useNavigate } from "react-router-dom";
 
-export function UserPhotoPost() {
+export default function UserPhotoPost() {
   const nome = useForm();
   const peso = useForm("number");
   const idade = useForm("number");
