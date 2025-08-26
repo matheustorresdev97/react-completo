@@ -1,3 +1,11 @@
+import { Outlet } from "react-router-dom";
+import {} from "../../components/user-header";
+
 export function User() {
-  return <div>Usuario</div>;
+  return (
+    <section className="container">
+      <UserHeader />
+      <Outlet />
+    </section>
+  );
 }
