@@ -1,7 +1,6 @@
 import styles from "./photo-content.module.css";
 import { Link } from "react-router-dom";
-import PhotoComments from "./photo-comments";
-
+import PhotoComments from "../photo-comments";
 
 
 export function PhotoContent({ data }) {

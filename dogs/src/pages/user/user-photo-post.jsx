@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import styles from "./user-photo-post.module.css";
-import { userForm } from "../../hooks/useForm";
+import { useForm } from "../../hooks/useForm";
 import { useFetch } from "../../hooks/useFetch";
 import { Input } from "../../components/forms/input";
 import { Button } from "../../components/forms/button";
@@ -10,9 +10,9 @@ import { PHOTO_POST } from "../../api";
 import { useNavigate } from "react-router-dom";
 
 export function UserPhotoPost() {
-  const nome = userForm();
-  const peso = userForm("number");
-  const idade = userForm("number");
+  const nome = useForm();
+  const peso = useForm("number");
+  const idade = useForm("number");
   const [img, setImg] = useState({});
   const { data, error, loading, request } = useFetch();
   const navigate = useNavigate();

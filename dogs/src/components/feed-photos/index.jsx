@@ -4,7 +4,7 @@ import { useFetch } from "../../hooks/useFetch";
 import { PHOTOS_GET } from "../../api";
 import { Error } from "../helper/error";
 import { Loading } from "../helper/loading";
-import { FeedPhotosItem } from "./feed-photos-item";
+import { FeedPhotosItem } from "../feed-photos-item";
 
 export function FeedPhotos() {
   const { data, loading, error, request } = useFetch();
@@ -13,7 +13,6 @@ export function FeedPhotos() {
     async function fetchPhotos() {
       const { url, options } = PHOTOS_GET({ page: 1, total: 6, user: 0 });
       const { response, json } = await request(url, options);
-      console.log(json);
     }
     fetchPhotos();
   }, [request]);
