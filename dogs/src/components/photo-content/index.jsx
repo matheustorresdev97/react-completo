@@ -4,15 +4,15 @@ import PhotoComments from "../photo-comments";
 import { useContext } from "react";
 import { UserContext } from "../../user-context";
 import { PhotoDelete } from "../photo-delete";
-import { Image } from "../helper/image"
+import { Image } from "../helper/image";
 
-export function PhotoContent({ data }) {
+export function PhotoContent({ data, single }) {
   const user = useContext(UserContext);
 
   const { photo, comments } = data;
 
   return (
-    <div className={styles.photo}>
+    <div className={`${styles.photo} ${single ? styles.single : ""}`}>
       <div className={styles.img}>
         <Image src={photo.src} alt={photo.title} />
       </div>
@@ -38,7 +38,7 @@ export function PhotoContent({ data }) {
         </div>
       </div>
 
-      <PhotoComments id={photo.id} comments={comments} />
+      <PhotoComments single={single} id={photo.id} comments={comments} />
     </div>
   );
 }
